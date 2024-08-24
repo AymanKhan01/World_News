@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/favouriteFragment2">
+
+    <fragment
+        android:id="@+id/favouriteFragment2"
+        android:name="com.example.world_news.ui.fragments.FavouriteFragment"
+        android:label="FavouriteFragment">
+
+        <argument
+            android:name="article"
+            app:argType="com.example.world_news.models.Article"/>
+        <action
+            android:id="@+id/action_favouriteFragment2_to_articleFragment"
+            app:destination="@id/articleFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/headlinesFragment2"
+        android:name="com.example.world_news.ui.fragments.HeadlinesFragment"
+        android:label="HeadlinesFragment" >
+        <action
+            android:id="@+id/action_headlinesFragment2_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment2"
+        android:name="com.example.world_news.ui.fragments.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment2_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.world_news.ui.fragments.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" />
+</navigation>
